@@ -76,3 +76,43 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How To Install this Project
+
+- Persiapan
+1. Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash (selanjutnya kita sebut terminal).
+2. Memiliki Web Server (misal XAMPP) dengan PHP minimal versi 7.3.
+3. Composer telah ter-install, cek dengan perintah composer -V melalui terminal.
+4. Memiliki koneksi internet (untuk proses installasi).
+
+Langkah-Langkah
+1. Download Source Code dari repo Github laravel-penduduk dalam bentuk Zip.
+2. Extract file zip (source code) ke dalam direktori htdocs pada XAMPP, misal htdocs/laravel7-ajax-datatables-crud.
+3. Melalui terminal, cd ke direktori laravel7-ajax-datatables-crud.
+4. (Sesuai petunjuk installasi) Pada terminal, berikan perintah <b>composer install</b>. Ini yang perlu koneksi internet.
+5. Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
+6. Jalankan perintah php artisan, untuk menguji apakah perintah artisan Laravel bekerja.
+7. Buat database baru (kosong) pada mysql (via phpmyadmin) dengan nama <b>laravel-ajax-crud</b>.
+8. Duplikat file .env.example, lalu rename menjadi .env.
+9. Kembali ke terminal, php artisan key:generate.
+10. Setting koneksi database di file .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+    <br>DB_CONNECTION=mysql
+    <br>DB_HOST=localhost
+    <br>DB_PORT=3306
+    <br>DB_DATABASE=laravel-ajax-crud
+    <br>DB_USERNAME=root
+    <br>DB_PASSWORD=
+11. Sejak Laravel 6, untuk membuat authentication tidak lagi menggunakan php artisan make:auth, maka kita perlu melakukan beberapa tahap konfigurasi untuk membawa kembali fitur ini sebagai berikut:
+    <br>composer require laravel/ui
+    <br>php artisan ui bootstrap --auth
+    <br>npm install && npm run dev
+12. Jalankan perintah <b>php artisan migrate</b>. Cek di phpmyadmin, seharusnya tabel sudah muncul.
+13. Untuk Mengisi data jalankan perintah berikut :
+    <br>php artisan tinker
+    <br>factory(App\User::class, 100)->create();
+14. Setelah selesai, Jalankan perintah <b>php artisan serve</b> maka dapat diakses dengan http://localhost:8000/
+
+SEKIAN PENJELASAN DARI SAYA, TERIMAKASIH. Created by <b>RIFKI</b>
+
+
+
